@@ -4,10 +4,10 @@ pragma experimental ABIEncoderV2;
 
 contract ResourceRentalSaveInformation {
     // Resource Information
-    Resource resource;
+    Resource[] resource;
 
     // Booking Information
-    Booking booking;
+    Booking[] booking;
 
     struct Resource {
         uint256 resourceId;
@@ -34,15 +34,29 @@ contract ResourceRentalSaveInformation {
         PROFESSOR
     }
 
-    constructor(Resource memory resourse_, Booking memory booking_) public {
-        resource = resourse_;
-        booking = booking_;
+    constructor() public {}
+
+    function createBooking() public {
+        require(
+            block.timestamp < (offsetBookingTime + uint256(fromTimeStampInput)),
+            "The rental must be in future"
+        );
+
+        require(
+            (renterPermission >= resourcePermission),
+            "The User is allowed to book the room"
+        );
+
+        require(
+            (fromTimeStampInput + toTimeStampInput <= maxRentTime),
+            "The booking time is above the maxRentTime"
+        );
 
         emit BookingCreated(
-            booking.startBookingTime,
-            booking.endBookingTime,
-            booking.renter,
-            booking.renterPermission
+            fromTimeStampInput,
+            toTimeStampInput,
+            renterAddress,
+            renterPermission
         );
     }
 
