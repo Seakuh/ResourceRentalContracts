@@ -14,6 +14,7 @@ contract ResourceRentalUniversity {
     // University Intern
     address public university;
     mapping(address => address[]) public authorities;
+    Resource[] resources;
     mapping(address => address[]) public resources;
 
     // uint256 fromTimestamp;
@@ -45,6 +46,12 @@ contract ResourceRentalUniversity {
     function createResource() public {}
 
     function addAuthority(address newAuthority) public {}
+
+    function changeMaxRoomAmount(uint256 _maxRooms) public {
+        maxRooms = _maxRooms;
+    }
+
+    function changeMaxRentTime(uint256 _maxRentTime) public {}
 
     function createBooking(
         uint256 fromTimeStampInput,
