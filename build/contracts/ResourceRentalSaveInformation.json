@@ -1,0 +1,1997 @@
+{
+  "contractName": "ResourceRentalSaveInformation",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "resourceId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "resourceName",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "loanable",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "loanInterval",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "resourceElectricityCostPerHour",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "resourceCosts",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "computingPower",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "buyOut",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "appraisedValue",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ResourceRentalSaveInformation.Resource",
+          "name": "resourse_",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "startBookingTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "endBookingTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "renter",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct ResourceRentalSaveInformation.Booking",
+          "name": "booking_",
+          "type": "tuple"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fromTimeStamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "toTimeStamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "renterAddress",
+          "type": "address"
+        }
+      ],
+      "name": "BookingCreated",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getBookingInformation",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"resourceId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"resourceName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"loanable\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"loanInterval\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"resourceElectricityCostPerHour\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"resourceCosts\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"computingPower\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"buyOut\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"appraisedValue\",\"type\":\"uint256\"}],\"internalType\":\"struct ResourceRentalSaveInformation.Resource\",\"name\":\"resourse_\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"startBookingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"endBookingTime\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"renter\",\"type\":\"address\"}],\"internalType\":\"struct ResourceRentalSaveInformation.Booking\",\"name\":\"booking_\",\"type\":\"tuple\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fromTimeStamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"toTimeStamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"renterAddress\",\"type\":\"address\"}],\"name\":\"BookingCreated\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[],\"name\":\"getBookingInformation\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ResourceRentalSaveInformation.sol\":\"ResourceRentalSaveInformation\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ResourceRentalSaveInformation.sol\":{\"keccak256\":\"0x2d5baf77f6b5feeb30db6be4e237f4a9f733c788189a43cc397ecc6bdb0c36ec\",\"urls\":[\"bzz-raw://2306149cb8f1b8fe4ccaa0749bf61d3afbc52b0b5b07c87bda96c05ae5aa343e\",\"dweb:/ipfs/Qmewtsicz4WCf4nFMKSvkvFYTVTWpoC8qE9RA5Q8h26Xd8\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516106793803806106798339818101604052610032919081019061042f565b816000808201518160000155602082015181600101908051906020019061005a9291906101a3565b5060408201518160020160006101000a81548160ff021916908315150217905550606082015181600301556080820151816004015560a0820151816005015560c0820151816006015560e08201518160070160006101000a81548160ff0219169083151502179055506101008201518160080155905050806009600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050507f63b2ee9406f5b4de2520627b528758c36b93081ec000b0579013c887b40b4562600960000154600960010154600960020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051610194939291906104a1565b60405180910390a150506105f1565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101e457805160ff1916838001178555610212565b82800160010185558215610212579182015b828111156102115782518255916020019190600101906101f6565b5b50905061021f9190610223565b5090565b61024591905b80821115610241576000816000905550600101610229565b5090565b90565b600081519050610257816105ac565b92915050565b60008151905061026c816105c3565b92915050565b600082601f83011261028357600080fd5b815161029661029182610505565b6104d8565b915080825260208301602083018583830111156102b257600080fd5b6102bd838284610579565b50505092915050565b6000606082840312156102d857600080fd5b6102e260606104d8565b905060006102f28482850161041a565b60008301525060206103068482850161041a565b602083015250604061031a84828501610248565b60408301525092915050565b6000610120828403121561033957600080fd5b6103446101206104d8565b905060006103548482850161041a565b600083015250602082015167ffffffffffffffff81111561037457600080fd5b61038084828501610272565b60208301525060406103948482850161025d565b60408301525060606103a88482850161041a565b60608301525060806103bc8482850161041a565b60808301525060a06103d08482850161041a565b60a08301525060c06103e48482850161041a565b60c08301525060e06103f88482850161025d565b60e08301525061010061040d8482850161041a565b6101008301525092915050565b600081519050610429816105da565b92915050565b6000806080838503121561044257600080fd5b600083015167ffffffffffffffff81111561045c57600080fd5b61046885828601610326565b9250506020610479858286016102c6565b9150509250929050565b61048c81610531565b82525050565b61049b8161056f565b82525050565b60006060820190506104b66000830186610492565b6104c36020830185610492565b6104d06040830184610483565b949350505050565b6000604051905081810181811067ffffffffffffffff821117156104fb57600080fd5b8060405250919050565b600067ffffffffffffffff82111561051c57600080fd5b601f19601f8301169050602081019050919050565b600061053c8261054f565b9050919050565b60008115159050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60005b8381101561059757808201518184015260208101905061057c565b838111156105a6576000848401525b50505050565b6105b581610531565b81146105c057600080fd5b50565b6105cc81610543565b81146105d757600080fd5b50565b6105e38161056f565b81146105ee57600080fd5b50565b607a806105ff6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063c57c732b14602d575b600080fd5b60336035565b005b56fea365627a7a72315820c00c26361bd16d70494ad61bc914b2b13f8c183506bbe4ca104a261a4dee22716c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063c57c732b14602d575b600080fd5b60336035565b005b56fea365627a7a72315820c00c26361bd16d70494ad61bc914b2b13f8c183506bbe4ca104a261a4dee22716c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "100:1019:3:-;;;667:278;8:9:-1;5:2;;;30:1;27;20:12;5:2;667:278:3;;;;;;;;;;;;;;;;;;;;;;;;759:9;748:8;:20;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;788:8;778:7;:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;812:126;840:7;:24;;;878:7;:22;;;914:7;:14;;;;;;;;;;;;812:126;;;;;;;;;;;;;;;;;667:278;;100:1019;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5:134:-1:-;;89:6;83:13;74:22;;101:33;128:5;101:33;;;68:71;;;;;146:128;;227:6;221:13;212:22;;239:30;263:5;239:30;;;206:68;;;;;282:436;;391:3;384:4;376:6;372:17;368:27;358:2;;409:1;406;399:12;358:2;439:6;433:13;461:61;476:45;514:6;476:45;;;461:61;;;452:70;;542:6;535:5;528:21;578:4;570:6;566:17;611:4;604:5;600:16;646:3;637:6;632:3;628:16;625:25;622:2;;;663:1;660;653:12;622:2;673:39;705:6;700:3;695;673:39;;;351:367;;;;;;;;777:678;;901:4;889:9;884:3;880:19;876:30;873:2;;;919:1;916;909:12;873:2;937:20;952:4;937:20;;;928:29;;1019:1;1051:60;1107:3;1098:6;1087:9;1083:22;1051:60;;;1044:4;1037:5;1033:16;1026:86;967:156;1183:2;1216:60;1272:3;1263:6;1252:9;1248:22;1216:60;;;1209:4;1202:5;1198:16;1191:86;1133:155;1340:2;1373:60;1429:3;1420:6;1409:9;1405:22;1373:60;;;1366:4;1359:5;1355:16;1348:86;1298:147;867:588;;;;;1514:1758;;1639:6;1627:9;1622:3;1618:19;1614:32;1611:2;;;1659:1;1656;1649:12;1611:2;1677:22;1692:6;1677:22;;;1668:31;;1755:1;1787:60;1843:3;1834:6;1823:9;1819:22;1787:60;;;1780:4;1773:5;1769:16;1762:86;1709:150;1938:2;1927:9;1923:18;1917:25;1962:18;1954:6;1951:30;1948:2;;;1994:1;1991;1984:12;1948:2;2029:66;2091:3;2082:6;2071:9;2067:22;2029:66;;;2022:4;2015:5;2011:16;2004:92;1869:238;2161:2;2194:57;2247:3;2238:6;2227:9;2223:22;2194:57;;;2187:4;2180:5;2176:16;2169:83;2117:146;2321:2;2354:60;2410:3;2401:6;2390:9;2386:22;2354:60;;;2347:4;2340:5;2336:16;2329:86;2273:153;2502:3;2536:60;2592:3;2583:6;2572:9;2568:22;2536:60;;;2529:4;2522:5;2518:16;2511:86;2436:172;2667:3;2701:60;2757:3;2748:6;2737:9;2733:22;2701:60;;;2694:4;2687:5;2683:16;2676:86;2618:155;2833:3;2867:60;2923:3;2914:6;2903:9;2899:22;2867:60;;;2860:4;2853:5;2849:16;2842:86;2783:156;2991:3;3025:57;3078:3;3069:6;3058:9;3054:22;3025:57;;;3018:4;3011:5;3007:16;3000:83;2949:145;3154:3;3190:60;3246:3;3237:6;3226:9;3222:22;3190:60;;;3181:6;3174:5;3170:18;3163:88;3104:158;1605:1667;;;;;3279:134;;3363:6;3357:13;3348:22;;3375:33;3402:5;3375:33;;;3342:71;;;;;3420:577;;;3601:3;3589:9;3580:7;3576:23;3572:33;3569:2;;;3618:1;3615;3608:12;3569:2;3674:1;3663:9;3659:17;3653:24;3697:18;3689:6;3686:30;3683:2;;;3729:1;3726;3719:12;3683:2;3749:89;3830:7;3821:6;3810:9;3806:22;3749:89;;;3739:99;;3632:212;3875:2;3893:88;3973:7;3964:6;3953:9;3949:22;3893:88;;;3883:98;;3854:133;3563:434;;;;;;4004:113;4087:24;4105:5;4087:24;;;4082:3;4075:37;4069:48;;;4124:113;4207:24;4225:5;4207:24;;;4202:3;4195:37;4189:48;;;4244:435;;4418:2;4407:9;4403:18;4395:26;;4432:71;4500:1;4489:9;4485:17;4476:6;4432:71;;;4514:72;4582:2;4571:9;4567:18;4558:6;4514:72;;;4597;4665:2;4654:9;4650:18;4641:6;4597:72;;;4389:290;;;;;;;4686:256;;4748:2;4742:9;4732:19;;4786:4;4778:6;4774:17;4885:6;4873:10;4870:22;4849:18;4837:10;4834:34;4831:62;4828:2;;;4906:1;4903;4896:12;4828:2;4926:10;4922:2;4915:22;4726:216;;;;;4949:318;;5089:18;5081:6;5078:30;5075:2;;;5121:1;5118;5111:12;5075:2;5188:4;5184:9;5177:4;5169:6;5165:17;5161:33;5153:41;;5252:4;5246;5242:15;5234:23;;5012:255;;;;5274:91;;5336:24;5354:5;5336:24;;;5325:35;;5319:46;;;;5372:85;;5445:5;5438:13;5431:21;5420:32;;5414:43;;;;5464:121;;5537:42;5530:5;5526:54;5515:65;;5509:76;;;;5592:72;;5654:5;5643:16;;5637:27;;;;5672:268;5737:1;5744:101;5758:6;5755:1;5752:13;5744:101;;;5834:1;5829:3;5825:11;5819:18;5815:1;5810:3;5806:11;5799:39;5780:2;5777:1;5773:10;5768:15;;5744:101;;;5860:6;5857:1;5854:13;5851:2;;;5925:1;5916:6;5911:3;5907:16;5900:27;5851:2;5721:219;;;;;5948:117;6017:24;6035:5;6017:24;;;6010:5;6007:35;5997:2;;6056:1;6053;6046:12;5997:2;5991:74;;6072:111;6138:21;6153:5;6138:21;;;6131:5;6128:32;6118:2;;6174:1;6171;6164:12;6118:2;6112:71;;6190:117;6259:24;6277:5;6259:24;;;6252:5;6249:35;6239:2;;6298:1;6295;6288:12;6239:2;6233:74;;100:1019:3;;;;;;;",
+  "deployedSourceMap": "100:1019:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;100:1019:3;;;;;;;;;;;;;;;;;;;951:42;;;:::i;:::-;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\npragma experimental ABIEncoderV2;\n\ncontract ResourceRentalSaveInformation {\n    // Resource Information\n    Resource resource;\n\n    // Booking Information\n    Booking booking;\n\n    struct Resource {\n        uint256 resourceId;\n        string resourceName;\n        bool loanable;\n        uint256 loanInterval;\n        uint256 resourceElectricityCostPerHour;\n        uint256 resourceCosts;\n        uint256 computingPower;\n        bool buyOut;\n        uint256 appraisedValue;\n    }\n\n    struct Booking {\n        uint256 startBookingTime;\n        uint256 endBookingTime;\n        address renter;\n    }\n\n    constructor(Resource memory resourse_, Booking memory booking_) public {\n        resource = resourse_;\n        booking = booking_;\n\n        emit BookingCreated(\n            booking.startBookingTime,\n            booking.endBookingTime,\n            booking.renter\n        );\n    }\n\n    function getBookingInformation() public {}\n\n    event BookingCreated(\n        uint256 fromTimeStamp,\n        uint256 toTimeStamp,\n        address renterAddress\n    );\n}\n",
+  "sourcePath": "/home/dizzle/Dev/ResourceRentalContracts/contracts/ResourceRentalSaveInformation.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ResourceRentalSaveInformation.sol",
+    "exportedSymbols": {
+      "ResourceRentalSaveInformation": [
+        220
+      ]
+    },
+    "id": 221,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 151,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:3"
+      },
+      {
+        "id": 152,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "65:33:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 220,
+        "linearizedBaseContracts": [
+          220
+        ],
+        "name": "ResourceRentalSaveInformation",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 154,
+            "name": "resource",
+            "nodeType": "VariableDeclaration",
+            "scope": 220,
+            "src": "173:17:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Resource_$175_storage",
+              "typeString": "struct ResourceRentalSaveInformation.Resource"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 153,
+              "name": "Resource",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 175,
+              "src": "173:8:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Resource_$175_storage_ptr",
+                "typeString": "struct ResourceRentalSaveInformation.Resource"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 156,
+            "name": "booking",
+            "nodeType": "VariableDeclaration",
+            "scope": 220,
+            "src": "224:15:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Booking_$182_storage",
+              "typeString": "struct ResourceRentalSaveInformation.Booking"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 155,
+              "name": "Booking",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 182,
+              "src": "224:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Booking_$182_storage_ptr",
+                "typeString": "struct ResourceRentalSaveInformation.Booking"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "ResourceRentalSaveInformation.Resource",
+            "id": 175,
+            "members": [
+              {
+                "constant": false,
+                "id": 158,
+                "name": "resourceId",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "272:18:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 157,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "272:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 160,
+                "name": "resourceName",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "300:19:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 159,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "300:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 162,
+                "name": "loanable",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "329:13:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 161,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "329:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 164,
+                "name": "loanInterval",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "352:20:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 163,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "352:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 166,
+                "name": "resourceElectricityCostPerHour",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "382:38:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 165,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "382:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 168,
+                "name": "resourceCosts",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "430:21:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 167,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "430:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 170,
+                "name": "computingPower",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "461:22:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 169,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "461:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 172,
+                "name": "buyOut",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "493:11:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 171,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "493:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 174,
+                "name": "appraisedValue",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "514:22:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 173,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "514:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Resource",
+            "nodeType": "StructDefinition",
+            "scope": 220,
+            "src": "246:297:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "ResourceRentalSaveInformation.Booking",
+            "id": 182,
+            "members": [
+              {
+                "constant": false,
+                "id": 177,
+                "name": "startBookingTime",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "574:24:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 176,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "574:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 179,
+                "name": "endBookingTime",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "608:22:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 178,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "608:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 181,
+                "name": "renter",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "640:14:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 180,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "640:7:3",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Booking",
+            "nodeType": "StructDefinition",
+            "scope": 220,
+            "src": "549:112:3",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 206,
+              "nodeType": "Block",
+              "src": "738:207:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 191,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 189,
+                      "name": "resource",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 154,
+                      "src": "748:8:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Resource_$175_storage",
+                        "typeString": "struct ResourceRentalSaveInformation.Resource storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 190,
+                      "name": "resourse_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 184,
+                      "src": "759:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Resource_$175_memory_ptr",
+                        "typeString": "struct ResourceRentalSaveInformation.Resource memory"
+                      }
+                    },
+                    "src": "748:20:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Resource_$175_storage",
+                      "typeString": "struct ResourceRentalSaveInformation.Resource storage ref"
+                    }
+                  },
+                  "id": 192,
+                  "nodeType": "ExpressionStatement",
+                  "src": "748:20:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 195,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 193,
+                      "name": "booking",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 156,
+                      "src": "778:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Booking_$182_storage",
+                        "typeString": "struct ResourceRentalSaveInformation.Booking storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 194,
+                      "name": "booking_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 186,
+                      "src": "788:8:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Booking_$182_memory_ptr",
+                        "typeString": "struct ResourceRentalSaveInformation.Booking memory"
+                      }
+                    },
+                    "src": "778:18:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Booking_$182_storage",
+                      "typeString": "struct ResourceRentalSaveInformation.Booking storage ref"
+                    }
+                  },
+                  "id": 196,
+                  "nodeType": "ExpressionStatement",
+                  "src": "778:18:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 198,
+                          "name": "booking",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 156,
+                          "src": "840:7:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Booking_$182_storage",
+                            "typeString": "struct ResourceRentalSaveInformation.Booking storage ref"
+                          }
+                        },
+                        "id": 199,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "startBookingTime",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 177,
+                        "src": "840:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 200,
+                          "name": "booking",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 156,
+                          "src": "878:7:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Booking_$182_storage",
+                            "typeString": "struct ResourceRentalSaveInformation.Booking storage ref"
+                          }
+                        },
+                        "id": 201,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "endBookingTime",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 179,
+                        "src": "878:22:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 202,
+                          "name": "booking",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 156,
+                          "src": "914:7:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Booking_$182_storage",
+                            "typeString": "struct ResourceRentalSaveInformation.Booking storage ref"
+                          }
+                        },
+                        "id": 203,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "renter",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 181,
+                        "src": "914:14:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 197,
+                      "name": "BookingCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 219,
+                      "src": "812:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 204,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "812:126:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 205,
+                  "nodeType": "EmitStatement",
+                  "src": "807:131:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 207,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 187,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 184,
+                  "name": "resourse_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 207,
+                  "src": "679:25:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Resource_$175_memory_ptr",
+                    "typeString": "struct ResourceRentalSaveInformation.Resource"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 183,
+                    "name": "Resource",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 175,
+                    "src": "679:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Resource_$175_storage_ptr",
+                      "typeString": "struct ResourceRentalSaveInformation.Resource"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 186,
+                  "name": "booking_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 207,
+                  "src": "706:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Booking_$182_memory_ptr",
+                    "typeString": "struct ResourceRentalSaveInformation.Booking"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 185,
+                    "name": "Booking",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 182,
+                    "src": "706:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Booking_$182_storage_ptr",
+                      "typeString": "struct ResourceRentalSaveInformation.Booking"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "678:52:3"
+            },
+            "returnParameters": {
+              "id": 188,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "738:0:3"
+            },
+            "scope": 220,
+            "src": "667:278:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 210,
+              "nodeType": "Block",
+              "src": "991:2:3",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 211,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBookingInformation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "981:2:3"
+            },
+            "returnParameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "991:0:3"
+            },
+            "scope": 220,
+            "src": "951:42:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 219,
+            "name": "BookingCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 218,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 213,
+                  "indexed": false,
+                  "name": "fromTimeStamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 219,
+                  "src": "1029:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 212,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1029:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 215,
+                  "indexed": false,
+                  "name": "toTimeStamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 219,
+                  "src": "1060:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 214,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1060:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 217,
+                  "indexed": false,
+                  "name": "renterAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 219,
+                  "src": "1089:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 216,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1089:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1019:97:3"
+            },
+            "src": "999:118:3"
+          }
+        ],
+        "scope": 221,
+        "src": "100:1019:3"
+      }
+    ],
+    "src": "32:1088:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/ResourceRentalSaveInformation.sol",
+      "exportedSymbols": {
+        "ResourceRentalSaveInformation": [
+          220
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 151,
+        "name": "PragmaDirective",
+        "src": "32:32:3"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 152,
+        "name": "PragmaDirective",
+        "src": "65:33:3"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            220
+          ],
+          "name": "ResourceRentalSaveInformation",
+          "scope": 221
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "resource",
+              "scope": 220,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct ResourceRentalSaveInformation.Resource",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Resource",
+                  "referencedDeclaration": 175,
+                  "type": "struct ResourceRentalSaveInformation.Resource"
+                },
+                "id": 153,
+                "name": "UserDefinedTypeName",
+                "src": "173:8:3"
+              }
+            ],
+            "id": 154,
+            "name": "VariableDeclaration",
+            "src": "173:17:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "booking",
+              "scope": 220,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct ResourceRentalSaveInformation.Booking",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Booking",
+                  "referencedDeclaration": 182,
+                  "type": "struct ResourceRentalSaveInformation.Booking"
+                },
+                "id": 155,
+                "name": "UserDefinedTypeName",
+                "src": "224:7:3"
+              }
+            ],
+            "id": 156,
+            "name": "VariableDeclaration",
+            "src": "224:15:3"
+          },
+          {
+            "attributes": {
+              "canonicalName": "ResourceRentalSaveInformation.Resource",
+              "name": "Resource",
+              "scope": 220,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "resourceId",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 157,
+                    "name": "ElementaryTypeName",
+                    "src": "272:7:3"
+                  }
+                ],
+                "id": 158,
+                "name": "VariableDeclaration",
+                "src": "272:18:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "resourceName",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 159,
+                    "name": "ElementaryTypeName",
+                    "src": "300:6:3"
+                  }
+                ],
+                "id": 160,
+                "name": "VariableDeclaration",
+                "src": "300:19:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "loanable",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 161,
+                    "name": "ElementaryTypeName",
+                    "src": "329:4:3"
+                  }
+                ],
+                "id": 162,
+                "name": "VariableDeclaration",
+                "src": "329:13:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "loanInterval",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 163,
+                    "name": "ElementaryTypeName",
+                    "src": "352:7:3"
+                  }
+                ],
+                "id": 164,
+                "name": "VariableDeclaration",
+                "src": "352:20:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "resourceElectricityCostPerHour",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 165,
+                    "name": "ElementaryTypeName",
+                    "src": "382:7:3"
+                  }
+                ],
+                "id": 166,
+                "name": "VariableDeclaration",
+                "src": "382:38:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "resourceCosts",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 167,
+                    "name": "ElementaryTypeName",
+                    "src": "430:7:3"
+                  }
+                ],
+                "id": 168,
+                "name": "VariableDeclaration",
+                "src": "430:21:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "computingPower",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 169,
+                    "name": "ElementaryTypeName",
+                    "src": "461:7:3"
+                  }
+                ],
+                "id": 170,
+                "name": "VariableDeclaration",
+                "src": "461:22:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "buyOut",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 171,
+                    "name": "ElementaryTypeName",
+                    "src": "493:4:3"
+                  }
+                ],
+                "id": 172,
+                "name": "VariableDeclaration",
+                "src": "493:11:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "appraisedValue",
+                  "scope": 175,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 173,
+                    "name": "ElementaryTypeName",
+                    "src": "514:7:3"
+                  }
+                ],
+                "id": 174,
+                "name": "VariableDeclaration",
+                "src": "514:22:3"
+              }
+            ],
+            "id": 175,
+            "name": "StructDefinition",
+            "src": "246:297:3"
+          },
+          {
+            "attributes": {
+              "canonicalName": "ResourceRentalSaveInformation.Booking",
+              "name": "Booking",
+              "scope": 220,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "startBookingTime",
+                  "scope": 182,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 176,
+                    "name": "ElementaryTypeName",
+                    "src": "574:7:3"
+                  }
+                ],
+                "id": 177,
+                "name": "VariableDeclaration",
+                "src": "574:24:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "endBookingTime",
+                  "scope": 182,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 178,
+                    "name": "ElementaryTypeName",
+                    "src": "608:7:3"
+                  }
+                ],
+                "id": 179,
+                "name": "VariableDeclaration",
+                "src": "608:22:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "renter",
+                  "scope": 182,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 180,
+                    "name": "ElementaryTypeName",
+                    "src": "640:7:3"
+                  }
+                ],
+                "id": 181,
+                "name": "VariableDeclaration",
+                "src": "640:14:3"
+              }
+            ],
+            "id": 182,
+            "name": "StructDefinition",
+            "src": "549:112:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 220,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "resourse_",
+                      "scope": 207,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct ResourceRentalSaveInformation.Resource",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Resource",
+                          "referencedDeclaration": 175,
+                          "type": "struct ResourceRentalSaveInformation.Resource"
+                        },
+                        "id": 183,
+                        "name": "UserDefinedTypeName",
+                        "src": "679:8:3"
+                      }
+                    ],
+                    "id": 184,
+                    "name": "VariableDeclaration",
+                    "src": "679:25:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "booking_",
+                      "scope": 207,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct ResourceRentalSaveInformation.Booking",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Booking",
+                          "referencedDeclaration": 182,
+                          "type": "struct ResourceRentalSaveInformation.Booking"
+                        },
+                        "id": 185,
+                        "name": "UserDefinedTypeName",
+                        "src": "706:7:3"
+                      }
+                    ],
+                    "id": 186,
+                    "name": "VariableDeclaration",
+                    "src": "706:23:3"
+                  }
+                ],
+                "id": 187,
+                "name": "ParameterList",
+                "src": "678:52:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 188,
+                "name": "ParameterList",
+                "src": "738:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct ResourceRentalSaveInformation.Resource storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 154,
+                              "type": "struct ResourceRentalSaveInformation.Resource storage ref",
+                              "value": "resource"
+                            },
+                            "id": 189,
+                            "name": "Identifier",
+                            "src": "748:8:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 184,
+                              "type": "struct ResourceRentalSaveInformation.Resource memory",
+                              "value": "resourse_"
+                            },
+                            "id": 190,
+                            "name": "Identifier",
+                            "src": "759:9:3"
+                          }
+                        ],
+                        "id": 191,
+                        "name": "Assignment",
+                        "src": "748:20:3"
+                      }
+                    ],
+                    "id": 192,
+                    "name": "ExpressionStatement",
+                    "src": "748:20:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct ResourceRentalSaveInformation.Booking storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 156,
+                              "type": "struct ResourceRentalSaveInformation.Booking storage ref",
+                              "value": "booking"
+                            },
+                            "id": 193,
+                            "name": "Identifier",
+                            "src": "778:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 186,
+                              "type": "struct ResourceRentalSaveInformation.Booking memory",
+                              "value": "booking_"
+                            },
+                            "id": 194,
+                            "name": "Identifier",
+                            "src": "788:8:3"
+                          }
+                        ],
+                        "id": 195,
+                        "name": "Assignment",
+                        "src": "778:18:3"
+                      }
+                    ],
+                    "id": 196,
+                    "name": "ExpressionStatement",
+                    "src": "778:18:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 219,
+                              "type": "function (uint256,uint256,address)",
+                              "value": "BookingCreated"
+                            },
+                            "id": 197,
+                            "name": "Identifier",
+                            "src": "812:14:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "startBookingTime",
+                              "referencedDeclaration": 177,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 156,
+                                  "type": "struct ResourceRentalSaveInformation.Booking storage ref",
+                                  "value": "booking"
+                                },
+                                "id": 198,
+                                "name": "Identifier",
+                                "src": "840:7:3"
+                              }
+                            ],
+                            "id": 199,
+                            "name": "MemberAccess",
+                            "src": "840:24:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "endBookingTime",
+                              "referencedDeclaration": 179,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 156,
+                                  "type": "struct ResourceRentalSaveInformation.Booking storage ref",
+                                  "value": "booking"
+                                },
+                                "id": 200,
+                                "name": "Identifier",
+                                "src": "878:7:3"
+                              }
+                            ],
+                            "id": 201,
+                            "name": "MemberAccess",
+                            "src": "878:22:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "renter",
+                              "referencedDeclaration": 181,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 156,
+                                  "type": "struct ResourceRentalSaveInformation.Booking storage ref",
+                                  "value": "booking"
+                                },
+                                "id": 202,
+                                "name": "Identifier",
+                                "src": "914:7:3"
+                              }
+                            ],
+                            "id": 203,
+                            "name": "MemberAccess",
+                            "src": "914:14:3"
+                          }
+                        ],
+                        "id": 204,
+                        "name": "FunctionCall",
+                        "src": "812:126:3"
+                      }
+                    ],
+                    "id": 205,
+                    "name": "EmitStatement",
+                    "src": "807:131:3"
+                  }
+                ],
+                "id": 206,
+                "name": "Block",
+                "src": "738:207:3"
+              }
+            ],
+            "id": 207,
+            "name": "FunctionDefinition",
+            "src": "667:278:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getBookingInformation",
+              "scope": 220,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 208,
+                "name": "ParameterList",
+                "src": "981:2:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 209,
+                "name": "ParameterList",
+                "src": "991:0:3"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 210,
+                "name": "Block",
+                "src": "991:2:3"
+              }
+            ],
+            "id": 211,
+            "name": "FunctionDefinition",
+            "src": "951:42:3"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "BookingCreated"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "fromTimeStamp",
+                      "scope": 219,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 212,
+                        "name": "ElementaryTypeName",
+                        "src": "1029:7:3"
+                      }
+                    ],
+                    "id": 213,
+                    "name": "VariableDeclaration",
+                    "src": "1029:21:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "toTimeStamp",
+                      "scope": 219,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 214,
+                        "name": "ElementaryTypeName",
+                        "src": "1060:7:3"
+                      }
+                    ],
+                    "id": 215,
+                    "name": "VariableDeclaration",
+                    "src": "1060:19:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "renterAddress",
+                      "scope": 219,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 216,
+                        "name": "ElementaryTypeName",
+                        "src": "1089:7:3"
+                      }
+                    ],
+                    "id": 217,
+                    "name": "VariableDeclaration",
+                    "src": "1089:21:3"
+                  }
+                ],
+                "id": 218,
+                "name": "ParameterList",
+                "src": "1019:97:3"
+              }
+            ],
+            "id": 219,
+            "name": "EventDefinition",
+            "src": "999:118:3"
+          }
+        ],
+        "id": 220,
+        "name": "ContractDefinition",
+        "src": "100:1019:3"
+      }
+    ],
+    "id": 221,
+    "name": "SourceUnit",
+    "src": "32:1088:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-17T19:50:32.140Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
