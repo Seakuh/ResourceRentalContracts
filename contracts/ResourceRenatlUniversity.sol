@@ -14,7 +14,7 @@ contract ResourceRentalUniversity {
     // University Intern
     address public university;
     uint256 authoritiesCount = 0;
-    mapping(uint256 => address[]) public authorities;
+    mapping(address => address[]) public authorities;
     Resource[] resources;
 
     // uint256 fromTimestamp;
@@ -31,6 +31,9 @@ contract ResourceRentalUniversity {
         bool buyOut;
         uint256 appraisedValue;
     }
+    struct Authority {
+        Permission permission;
+    }
 
     enum Permission {
         STUDENT,
@@ -45,8 +48,23 @@ contract ResourceRentalUniversity {
 
     function insertBooking() public isAuthority {}
 
-    function addAuthority(address newAuthority) public isUniversity {
-        authorities[authoritiesCount].push(newAuthority);
+    function addAuthority(address _newAuthorityAddress) public isUniversity {
+        authorities[_newAuthorityAddress].push(_newAuthorityAddress);
+    }
+
+    function addStudent(address _newAuthorityAddress) public isUniversity {
+        authorities[_newAuthorityAddress].push(_newAuthorityAddress);
+    }
+
+    function addProfessor(address _newAuthorityAddress) public isUniversity {
+        authorities[_newAuthorityAddress].push(_newAuthorityAddress);
+    }
+
+    function removeAuthority(address _removeAuthorityAddress)
+        public
+        isUniversity
+    {
+        delete authorities[_removeAuthorityAddress];
     }
 
     function changeMaxRoomAmount(uint256 _maxRooms) public isAuthority {
