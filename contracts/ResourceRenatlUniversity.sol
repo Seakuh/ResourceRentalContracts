@@ -13,9 +13,9 @@ contract ResourceRentalUniversity {
 
     // University Intern
     address public university;
-    mapping(address => address[]) public authorities;
+    uint256 authoritiesCount = 0;
+    mapping(uint256 => address[]) public authorities;
     Resource[] resources;
-    mapping(address => address[]) public resources;
 
     // uint256 fromTimestamp;
     // uint256 toTimestamp;
@@ -43,15 +43,17 @@ contract ResourceRentalUniversity {
         university = msg.sender;
     }
 
-    function createResource() public {}
+    function insertBooking() public isAuthority {}
 
-    function addAuthority(address newAuthority) public {}
+    function addAuthority(address newAuthority) public isUniversity {
+        authorities[authoritiesCount].push(newAuthority);
+    }
 
-    function changeMaxRoomAmount(uint256 _maxRooms) public {
+    function changeMaxRoomAmount(uint256 _maxRooms) public isAuthority {
         maxRooms = _maxRooms;
     }
 
-    function changeMaxRentTime(uint256 _maxRentTime) public {}
+    function changeMaxRentTime(uint256 _maxRentTime) public isAuthority {}
 
     function createBooking(
         uint256 fromTimeStampInput,
