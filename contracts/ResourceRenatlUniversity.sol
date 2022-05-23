@@ -48,6 +48,10 @@ contract ResourceRentalUniversity {
 
     function insertBooking() public isAuthority {}
 
+    function setMaxRooms(uint256 _maxRooms) public isAuthority {
+        maxRooms = _maxRooms;
+    }
+
     function addAuthority(address _newAuthorityAddress) public isUniversity {
         authorities[_newAuthorityAddress].push(_newAuthorityAddress);
     }
